@@ -1,10 +1,16 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
-from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
+from sklearn.metrics import (
+    mean_absolute_error,
+    mean_squared_error,
+    r2_score
+)
 
 # Load Dataset
-data = pd.read_csv("students.csv")
+data = pd.read_csv("datasets/Students.csv")
+# If students.csv is in the same folder as this file,
+# use: data = pd.read_csv("students.csv")
 
 # Features and Target
 X = data[["Hours_Studied"]]
@@ -41,4 +47,6 @@ print("R2 Score :", round(r2_score(y_test, y_pred), 2))
 hours = [[7.5]]
 predicted_marks = model.predict(hours)
 
-print(f"\nPredicted Marks for {hours[0][0]} hours of study: {predicted_marks[0]:.2f}")
+print(
+    f"\nPredicted Marks for {hours[0][0]} hours of study: {predicted_marks[0]:.2f}"
+)
