@@ -8,9 +8,7 @@ from sklearn.metrics import (
 )
 
 # Load Dataset
-data = pd.read_csv("datasets/Students.csv")
-# If students.csv is in the same folder as this file,
-# use: data = pd.read_csv("students.csv")
+data = pd.read_csv("students.csv")
 
 # Features and Target
 X = data[["Hours_Studied"]]
